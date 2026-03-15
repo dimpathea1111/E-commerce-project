@@ -1,53 +1,49 @@
 
-
-
-
-
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardAction } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 import { Product } from "@/app/types/product"
 
-type ProductCardProps = {
+type Props = {
   product: Product
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product }: Props) {
   return (
     <Link href={`/products/${product.id}`}>
-      <Card className="w-full max-w-sm mx-auto overflow-hidden cursor-pointer hover:shadow-lg transition">
-        {/* <div className="relative aspect-video w-full">
-          <Image
-            src={product.images[0]}
-            alt={product.title}
-            // fill
-            className="object-cover"
-          />
-        </div> */}
+      <div className="border rounded-lg p-4 hover:shadow-lg transition bg-white">
 
-        <div className="relative w-full aspect-video">
-          <Image
-            src={product.images[0]} // e.g. https://api.escuelajs.co/api/v1/files/1621.jpg
+        <div className="relative w-full h-48 mb-4">
+          {/* <Image
+            src={product.image}
             alt={product.title}
             fill
-            className="object-cover"
-          />
+            className="object-contain"
+          /> */}
+
+          <Image
+  src={product.images?.[0] || "/placeholder.png"}
+  alt={product.title}
+  fill
+  className="object-contain"
+/>
+
+           {/* <img
+            src={product.image}
+            alt={product.title}
+            // fill
+            className="object-contain"
+          /> */}
         </div>
 
-        <CardHeader>
-          <CardAction>
-            <Badge>${product.price}</Badge>
-          </CardAction>
-          <CardTitle>{product.title}</CardTitle>
-          <CardDescription className="line-clamp-2">{product.description}</CardDescription>
-        </CardHeader>
+        <h3 className="font-semibold line-clamp-2">
+          {product.title}
+        </h3>
 
-        <CardFooter>
-          <Button className="w-full">View</Button>
-        </CardFooter>
-      </Card>
+        <p className="text-orange-500 font-bold mt-2">
+          ${product.price}
+        </p>
+
+      </div>
     </Link>
   )
 }
