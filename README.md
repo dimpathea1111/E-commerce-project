@@ -1,3 +1,60 @@
+
+#  ShopNext — E-Commerce Mini Project
+
+> **Frontend Mini Project**  
+> Built with Next.js 14 App Router, TypeScript, Tailwind CSS, and FakeShopAPI.
+
+
+## Screenshots
+
+| Page | Description |
+|------|-------------|
+| `/` | Hero + Featured Products |
+| `/products` | Product listing with pagination & category filter |
+| `/products/[id]` | Full product detail |
+| `/users` | User community listing |
+| `/users/[id]` | Full user profile |
+| `/cart` | Shopping cart with quantity controls |
+| `/admin` | Admin dashboard with stats |
+| `/admin/products` | CRUD table for products |
+
+
+## Environment Variables
+
+Create a `.env.local` file in the root:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=https://api.escuelajs.co
+```
+## Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| **Next.js 14** | App Router, Server & Client Components |
+| **TypeScript** | Type safety |
+| **Tailwind CSS** | Utility-first styling |
+| **React Hook Form + Zod** | Admin form validation |
+| **Lucide React** | Icons |
+| **nuqs** | URL search param management |
+| **FakeShopAPI** | Product & user data |
+
+
+### Public
+- Product listing page with **pagination** (`?page=&limit=`)
+- **Category filter** via URL query params
+- Product detail with full info + star rating
+- User listing with avatars
+- User profile with address and contact info
+- Shopping cart with quantity management (client-side)
+
+### Admin Dashboard
+- Products CRUD table (create/edit/delete with modal form)
+- Users management table
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -20,19 +20,19 @@ export function ProductCard({ product }: Props) {
             className="object-contain"
           /> */}
 
-          <Image
+          {/* <Image
   src={product.images?.[0] || "/placeholder.png"}
   alt={product.title}
   fill
   className="object-contain"
-/>
+/> */}
 
-           {/* <img
+           <img
             src={product.image}
             alt={product.title}
             // fill
             className="object-contain"
-          /> */}
+          />
         </div>
 
         <h3 className="font-semibold line-clamp-2">
